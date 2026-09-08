@@ -18,7 +18,6 @@ Vt = Vt[idx, :]
 np.savez('svd_top100.npz', U=U, S=S, Vt=Vt)
 
 
-
 plt.figure(figsize=(8, 5))
 plt.plot(range(1, 101), S, linewidth=2)
 plt.title('Top 100 Singular Values')
