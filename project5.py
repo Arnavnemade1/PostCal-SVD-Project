@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.sparse.linalg import svds
-
 if os.path.exists('svd_top100.npz'):
     data = np.load('svd_top100.npz')
     U, S, Vt = data['U'], data['S'], data['Vt']
@@ -16,8 +15,9 @@ idx = np.argsort(S)[::-1]
 S = S[idx]
 U = U[:, idx]
 Vt = Vt[idx, :]
-
 np.savez('svd_top100.npz', U=U, S=S, Vt=Vt)
+
+
 
 plt.figure(figsize=(8, 5))
 plt.plot(range(1, 101), S, linewidth=2)
